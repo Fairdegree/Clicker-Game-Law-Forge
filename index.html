@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clicker Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="Cursor.png">
+
+</head>
+<body>
+
+    <!-- DEV PANEL BUTTON -->
+    <button id="devBtn" class="dev-btn">⚙️</button>
+
+    <!-- DEV PANEL -->
+    <div id="devPanel" class="side-panel">
+        <h2>Developer Panel</h2>
+
+        <h3>Stats</h3>
+        <div class="dev-row"><span>Clicks:</span><span id="devClicks">0</span></div>
+        <div class="dev-row"><span>Multiplier:</span><span id="devMult">1</span></div>
+        <div class="dev-row"><span>Auto‑Clickers:</span><span id="devAuto">0</span></div>
+        <div class="dev-row"><span>Prestige:</span><span id="devPrestige">0</span></div>
+
+        <h3>Debug</h3>
+        <button id="toggleDebug" class="shop-btn">Toggle Debug Overlay</button>
+
+        <h3>Law Tree</h3>
+        <button id="openLawTree" class="shop-btn">🌳 Open Law Tree</button>
+
+        <h3>Cheats</h3>
+        <button id="devAddClicks" class="shop-btn">+1M Clicks</button>
+
+        <h3>Reset Options</h3>
+        <button id="softReset" class="shop-btn">Soft Reset</button>
+        <button id="fullReset" class="prestige-btn">Full Reset</button>
+
+        <button class="close-btn" onclick="closePanels()">Close</button>
+    </div>
+
+    <!-- DEBUG OVERLAY -->
+    <div id="debugOverlay" class="debug-overlay">
+        <h3>🔧 DEBUG</h3>
+        <div id="debugContent"></div>
+    </div>
+
+    <div class="game-container">
+        <h1 class="title">✨ Clicker Game ✨</h1>
+
+        <div class="stats-box">
+            <p>Clicks: <span id="clicks">0</span></p>
+            <div class="progress"><div id="progressFill"></div></div>
+
+            <p>Multiplier: <span id="multiplier">1</span></p>
+            <p>Auto‑Clickers: <span id="auto">0</span></p>
+            <p>Prestige: <span id="prestige">0</span></p>
+            <p>Law Points: <span id="lpDisplay">0</span></p>
+        </div>
+
+        <button id="clickBtn" class="main-btn">Click</button>
+
+        <div class="menu-row">
+            <button id="openShop" class="menu-btn">🛒 Shop</button>
+            <button id="openPrestige" class="menu-btn">🔥 Prestige</button>
+            <button id="openAchievements" class="menu-btn">🏆 Achievements</button>
+            <button id="openRules" class="menu-btn">📜 Rules</button>
+        </div>
+    </div>
+
+    <!-- SHOP PANEL -->
+    <div id="shopPanel" class="side-panel">
+        <h2>Shop</h2>
+        <button id="buyMult" class="shop-btn">⚔️ Buy Multiplier</button>
+        <button id="buyAuto" class="shop-btn">🤖 Buy Auto‑Clicker</button>
+        <button class="close-btn" onclick="closePanels()">Close</button>
+    </div>
+
+    <!-- PRESTIGE PANEL -->
+    <div id="prestigePanel" class="side-panel">
+        <h2>Prestige</h2>
+        <p>Reset everything for permanent bonus</p>
+        <p>You will gain: <span id="prestigeGain">0</span> 🔥</p>
+        <button id="doPrestige" class="prestige-btn">Ascend</button>
+        <button class="close-btn" onclick="closePanels()">Close</button>
+    </div>
+
+    <!-- ACHIEVEMENTS PANEL -->
+    <div id="achievementsPanel" class="side-panel">
+        <h2>Achievements</h2>
+        <ul id="achievementList"></ul>
+        <button class="close-btn" onclick="closePanels()">Close</button>
+    </div>
+
+    <!-- RULES PANEL -->
+    <div id="rulesPanel" class="side-panel">
+        <h2>Rule Rewriter</h2>
+        <p>Modify the rules of this run</p>
+
+        <button class="shop-btn rule-btn" data-rule="heat">🔥 Enable Heat System</button>
+        <button class="shop-btn rule-btn" data-rule="entropy">🌪️ Enable Entropy Drift</button>
+        <button class="shop-btn rule-btn" data-rule="chaos">⚡ Enable Chaos Events</button>
+        <button class="shop-btn rule-btn" data-rule="timewarp">⏱️ Enable Time Warp</button>
+
+        <button class="close-btn" onclick="closePanels()">Close</button>
+    </div>
+
+    <!-- LAW FORGE PANEL (old system) -->
+    <div id="lawPanel" class="side-panel">
+        <h2>Choose a Law</h2>
+        <p>Select ONE permanent upgrade:</p>
+        <div id="lawChoices"></div>
+        <button class="close-btn" onclick="closePanels()">Close</button>
+    </div>
+
+    <!-- NEW LAW TREE PANEL -->
+    <div id="lawTreePanel" class="side-panel">
+        <h2>Law Tree</h2>
+        <div id="lawTreeContainer"></div>
+        <button class="close-btn" onclick="closePanels()">Close</button>
+    </div>
+
+    <!-- ACHIEVEMENT POPUP -->
+    <div id="achievementPopup" class="achievement-popup">Achievement Unlocked!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
